@@ -32,7 +32,7 @@ public class App
 
         while(true)
         {
-            System.out.print("1.Insert\n2.Update\n3.Delete\n4.Select Single Object\n5.Select All\n6.Exit\nEnter Your Choice : ");
+            System.out.print("\n1.Insert\n2.Update\n3.Delete\n4.Select Single Object\n5.Select All\n6.Exit\nEnter Your Choice : ");
             ch = sc.nextInt();
             switch(ch)
             {
@@ -48,6 +48,19 @@ public class App
                     city = sc.nextLine();
                     student.setCity(city);
                     studentDao.insert(student);
+                }
+                case 2->{
+                    System.out.print("Enter student id : ");
+                    id = sc.nextInt();
+                    student.setId(id);
+                    sc.nextLine();
+                    System.out.print("Enter new name : ");
+                    name = sc.nextLine();
+                    student.setName(name);
+                    System.out.print("Enter new city : ");
+                    city = sc.nextLine();
+                    student.setCity(city);
+                    studentDao.change(student);
                 }
                case 6->{
                 sc.close();
