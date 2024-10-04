@@ -70,6 +70,13 @@ public class App
                     id = sc.nextInt();
                     studentDao.delete(id);
                 }
+                case 4->{
+                    System.out.print("Enter id of student : ");
+                    id = sc.nextInt();
+                    Student st = studentDao.getStudent(id);
+                    System.out.println("The student details are as follows : ");
+                    System.out.println(st);
+                }
                case 6->{
                 sc.close();
                 System.exit(0);

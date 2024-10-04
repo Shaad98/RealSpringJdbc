@@ -29,6 +29,12 @@ public class StudentDaoImpl implements StudentDao{
         System.out.println(r+" row deleted!");
         return r;
     }
+    public Student getStudent(int studentId)
+    {
+        String query = "SELECT * FROM student WHERE id = ?";
+        Student student = this.jdbcTemplate.queryForObject(query, new RowMapperImpl(),studentId);
+        return student;
+    }
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
     }
