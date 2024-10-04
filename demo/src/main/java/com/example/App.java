@@ -77,6 +77,13 @@ public class App
                     System.out.println("The student details are as follows : ");
                     System.out.println(st);
                 }
+                case 5->{
+                    System.out.println("All students Details are as follows : ");
+                    List<Student> students = studentDao.getAllStudents();
+                    for (Student student2 : students) {
+                        System.out.println(student2);
+                    }
+                }
                case 6->{
                 sc.close();
                 System.exit(0);

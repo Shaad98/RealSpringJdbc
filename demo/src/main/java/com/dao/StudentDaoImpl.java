@@ -3,7 +3,7 @@ package com.dao;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.entities.Student;
-
+import java.util.*;
 public class StudentDaoImpl implements StudentDao{
     private JdbcTemplate jdbcTemplate;
     @Override
@@ -34,6 +34,12 @@ public class StudentDaoImpl implements StudentDao{
         String query = "SELECT * FROM student WHERE id = ?";
         Student student = this.jdbcTemplate.queryForObject(query, new RowMapperImpl(),studentId);
         return student;
+    }
+    public List<Student> getAllStudents()
+    {
+        String query = "SELECT * FROM student";
+        List<Student> students = this.jdbcTemplate.query(query, new RowMapperImpl());
+        return students;
     }
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
