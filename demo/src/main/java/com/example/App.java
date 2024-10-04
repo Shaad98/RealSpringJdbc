@@ -12,8 +12,11 @@ import com.entities.Student;
 
 /**
  * Hello world!
- *
+ * @author Shaad Bangi
+ * @version 1.1
+ * @since  2024
  */
+    //Date :  3/8/2024 
 public class App 
 {
     public static void main( String[] args )
@@ -61,6 +64,11 @@ public class App
                     city = sc.nextLine();
                     student.setCity(city);
                     studentDao.change(student);
+                }
+                case 3->{
+                    System.out.print("Enter student id : ");
+                    id = sc.nextInt();
+                    studentDao.delete(id);
                 }
                case 6->{
                 sc.close();
